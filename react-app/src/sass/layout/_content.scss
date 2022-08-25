@@ -1,0 +1,109 @@
+@import '../Helpers/variables';
+@import '../Helpers/mixins';
+
+.content {
+    @include flexbox();
+    gap: 30px;
+
+    &__box{
+        background-color: $third-color;
+        font-size: $mediumer-font-size;
+        padding: 10px;
+        height: 500px;
+        width: 600px;
+        box-shadow: $shadow;
+        border: none;
+        resize: none;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+            background-color: #eaeaea;
+            border-left: 1px solid #ccc;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #626161;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #626161;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        * {
+            margin-top: -5px;
+            word-break: break-word;
+        }
+    }
+
+    @media screen and (max-width: $small-screen) {
+        &__box {
+            font-size: $small-font-size;
+            height: 210px;
+            width: 300px;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+        }
+
+        & {
+            @include flexbox($direction: column);
+            gap: 15px;
+        } 
+    }
+
+    @media screen and (min-width: $small-screen) {
+        &__box {
+            font-size: $normal-font-size;
+            height: 280px;
+            width: 500px;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+        }
+
+        & {
+            @include flexbox($direction: column);
+            gap: 15px;
+        } 
+    }
+
+    @media screen and (min-width: $medium-screen) {
+        &__box {
+            font-size: $medium-font-size;
+            height: 510px;
+            width: 345px;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+        }
+
+        & {
+            @include flexbox();
+            gap: 20px;
+        }
+    }
+
+    @media screen and (min-width: $large-screen) {
+        &__box {
+            font-size: $mediumer-font-size;
+            height: 510px;
+            width: 450px;
+        }
+    }
+
+    @media screen and (min-width: $extra-large-screen) {
+        &__box {
+            font-size: $mediumer-font-size;
+            height: 510px;
+            width: 590px;
+        }
+    }
+}
